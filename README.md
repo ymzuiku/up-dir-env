@@ -1,0 +1,3 @@
+# up-dir-env
+
+Use dotenv lod <cwd>, ../<cwd>, ../../<cwd>, ....
