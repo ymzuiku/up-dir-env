@@ -1,11 +1,22 @@
 {
   "name": "up-dir-env",
-  "version": "0.0.6",
-  "main": "index.js",
+  "version": "0.0.7",
+  "types": "lib/index.tsx",
+  "main": "cjs/index.js",
   "private": false,
-  "types": "./index.d.ts",
-  "description": "向上查找 .env",
+  "exports": {
+    "import": "./esm/index.js",
+    "require": "./cjs/index.js"
+  },
+  "description": "up dir find .env",
+  "scripts": {
+    "build": "node build.js"
+  },
   "dependencies": {
     "dotenv": "^16.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.0",
+    "esbuild": "^0.15.5"
   }
 }

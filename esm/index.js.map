@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../lib/index.ts"],
+  "sourcesContent": ["import { config as envConfig } from \"dotenv\";\nimport * as fs from \"node:fs\";\nimport { resolve } from \"node:path\";\n\nconst cwd = process.cwd();\n\nexport const config = () => {\n  const envs = [\n    \"./.env\",\n    \"../.env\",\n    \"../../.env\",\n    \"../../../.env\",\n    \"../../../../.env\",\n    \"../../../../../.env\",\n  ];\n\n  const envPath = envs.find((v) => {\n    if (fs.existsSync(resolve(cwd, v))) {\n      return v;\n    }\n  });\n\n  if (!envPath) {\n    throw Error(\"No found .env in \" + cwd);\n  }\n\n  envConfig({ path: resolve(cwd, envPath) });\n};\n"],
+  "mappings": "AAAA,OAAS,UAAUA,MAAiB,SACpC,UAAYC,MAAQ,UACpB,OAAS,WAAAC,MAAe,YAExB,IAAMC,EAAM,QAAQ,IAAI,EAEXC,EAAS,IAAM,CAU1B,IAAMC,EATO,CACX,SACA,UACA,aACA,gBACA,mBACA,qBACF,EAEqB,KAAMC,GAAM,CAC/B,GAAO,aAAWJ,EAAQC,EAAKG,CAAC,CAAC,EAC/B,OAAOA,CAEX,CAAC,EAED,GAAI,CAACD,EACH,MAAM,MAAM,oBAAsBF,CAAG,EAGvCH,EAAU,CAAE,KAAME,EAAQC,EAAKE,CAAO,CAAE,CAAC,CAC3C",
+  "names": ["envConfig", "fs", "resolve", "cwd", "config", "envPath", "v"]
+}
