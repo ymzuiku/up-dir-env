@@ -5,12 +5,7 @@ import { resolve } from "node:path";
 const cwd = process.cwd();
 
 export const config = () => {
-  if (process.env.VERCEL == "1") {
-    envConfig();
-    return;
-  }
-  if (process.env.IGNORE_UP_DIR_ENV == "1") {
-    envConfig();
+  if (process.env.VERCEL == "1" || process.env.IGNORE_UP_DIR_ENV == "1") {
     return;
   }
   const envs = [

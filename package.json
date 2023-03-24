@@ -1,6 +1,6 @@
 {
   "name": "up-dir-env",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "types": "lib/index.ts",
   "main": "cjs/index.js",
   "private": false,
