@@ -6,9 +6,11 @@ const cwd = process.cwd();
 
 export const config = () => {
   if (process.env.VERCEL == "1") {
+    envConfig();
     return;
   }
-  if (process.env.IGNOE_DOTENV == "1") {
+  if (process.env.IGNORE_UP_DIR_ENV == "1") {
+    envConfig();
     return;
   }
   const envs = [

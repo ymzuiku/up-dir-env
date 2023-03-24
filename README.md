@@ -2,10 +2,10 @@
 
 Use dotenv lod <cwd>, ../<cwd>, ../../<cwd>, ....
 
-ignore load, set ENV:
+only load now dir, set env:
 
 ```env
-IGNOE_DOTENV = 1
+IGNORE_UP_DIR_ENV = 1
 ```
 
 or
