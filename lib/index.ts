@@ -5,6 +5,12 @@ import { resolve } from "node:path";
 const cwd = process.cwd();
 
 export const config = () => {
+  if (process.env.VERCEL == "1") {
+    return;
+  }
+  if (process.env.IGNOE_DOTENV == "1") {
+    return;
+  }
   const envs = [
     "./.env",
     "../.env",
